@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHome | Advanced Smart Gadgets</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #161b22;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+ nav {
+      background-color: #1f1f2e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #1e90ff;
+    }
+
+    /* --- TOGGLE BUTTON --- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background-color: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+
+    section {
+      padding: 80px 30px;
+      text-align: center;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 120px 20px;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .gadgets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background:black;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .blog-entry {
+      background: #161b22;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 8px;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      text-align: left;
+    }
+
+    .blog-entry h3 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .blog-entry p {
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: yellow;
+      color: #8b949e;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+
+
+      .hero {
+        height: 300px;
+      }
+
+      .hero h2 {
+        font-size: 2.2em;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        height: 250px;
+        padding: 15px;
+      }
+
+      .hero h2 {
+        font-size: 1.5em;
+        padding: 10px 15px;
+      }
+
+      .features {
+        padding: 30px 15px;
+        gap: 20px;
+      }
+
+      .feature-card {
+        padding: 20px;
+      }
+
+      footer {
+        font-size: 0.8em;
+      }
+    }
+    
+     @media (max-width: 600px) {
+
+
+      .hero {
+        height: 250px;
+        padding: 15px;
+      }
+
+      .hero h2 {
+        font-size: 1.5em;
+        padding: 10px 15px;
+      }
+
+      .features {
+        padding: 30px 15px;
+        gap: 20px;
+      }
+
+      .feature-card {
+        padding: 20px;
+      }
+
+      footer {
+        font-size: 0.8em;
+      }
+    }
+     @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        background-color: #1f1f2e;
+        flex-direction: column;
+        width: 220px;
+        text-align: right;
+        padding: 20px;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        font-size: 1.1rem;
+        display: block;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+      }
+
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+      
+    }
+      
+  </style>
+</head>
+<body>
+  <header>
+   <nav>
+    <a href="#" class="logo">HOME GADGETS</a>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="entertainment.html">Entertainment</a>
+      <a href="smart_lighting.html">Smart Lighting</a>
+      <a href="home_security.html">Home Security</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Experience Smart Living</h1>
+    <p>Explore the latest in smart home technology and make your living space more connected, efficient, and secure.</p>
+  </section>
+
+  <section id="products">
+    <h2>Featured Smart Gadgets</h2>
+    <div class="gadgets">
+      <div class="card">
+        <h3>Smart Light Bulb</h3>
+        <p>Energy-saving bulbs with app and voice control to set ambiance for any mood.</p>
+      </div>
+      <div class="card">
+        <h3>Video Doorbell</h3>
+        <p>Monitor your front door remotely with live video and motion alerts.</p>
+      </div>
+      <div class="card">
+        <h3>Smart Thermostat</h3>
+        <p>Automatically adjusts temperature based on your preferences to reduce energy costs.</p>
+      </div>
+      <div class="card">
+        <h3>Smart Plugs</h3>
+        <p>Turn devices on/off remotely and monitor power usage from your phone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About SmartHome</h2>
+    <p>SmartHome is dedicated to transforming houses into intelligent living spaces. With a passion for innovation and user-friendly technology, we offer curated smart gadgets that make life simpler and safer.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Our Blog</h2>
+    <div class="blog-entry">
+      <h3>Top 5 Smart Home Devices for Beginners</h3>
+      <p>Getting started with smart home gadgets can be overwhelming. Here are the top 5 must-have devices to begin your journey: smart lights, smart plugs, a voice assistant, smart thermostat, and security cameras. These provide convenience and security while being easy to install and use.</p>
+    </div>
+    <div class="blog-entry">
+      <h3>How to Set Up a Smart Lighting System</h3>
+      <p>Smart lighting can transform your home’s ambiance. Learn how to choose the right bulbs, connect them to your Wi-Fi or hub, and automate them using schedules or motion sensors. Voice control via Alexa or Google Assistant adds hands-free convenience.</p>
+    </div>
+    <div class="blog-entry">
+      <h3>Why Smart Thermostats Save You Money</h3>
+      <p>Smart thermostats learn your habits and optimize heating/cooling to reduce energy waste. With remote access and data insights, you can maintain comfort while cutting down utility bills. Discover how devices like Nest or Ecobee can make a difference.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 SmartHome. Built for a smarter tomorrow.</p>
+  </footer>
+    <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

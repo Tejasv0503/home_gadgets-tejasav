@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+                  font-family: 'Segoe UI', sans-serif;
+        }
+        .section-header.lighting-banner {
+  background: linear-gradient(135deg, #1a1f2b, #0f1c26);
+  text-align: center;
+  padding: 100px 20px 60px;
+  color: #c9d1d9;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section-header.lighting-banner h1 {
+  font-size: 42px;
+  color: #58a6ff;
+  margin-bottom: 15px;
+}
+
+.section-header.lighting-banner p {
+  font-size: 18px;
+  color: #8b949e;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+            .lighting-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .lighting-card {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .lighting-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .lighting-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .lighting-card h3 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .lighting-card p {
+      color: #c9d1d9;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .lighting-card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #238636;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lighting-card button:hover {
+      background: #2ea043;
+    }
+    </style>
+</head>
+<body>
+      <section class="section-header lighting-banner">
+  <h1>Smart Lighting Solutions</h1>
+  <p>Brighten your home with intelligent, energy-efficient lighting you can control from anywhere.</p>
+</section>
+
+    <div class="lighting-grid">
+      <div class="lighting-card">
+        <img src="smart led.jpg" alt="Smart LED Bulb">
+        <h3>Smart LED Bulb</h3>
+        <p>Control brightness and color via app or voice. Set schedules and save energy effortlessly.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="lighting-card">
+        <img src="https://via.placeholder.com/300x200" alt="Smart Light Strip">
+        <h3>Smart Light Strip</h3>
+        <p>Flexible RGB strips for under-cabinet, TV, or ambient lighting. Sync with music or scenes.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="lighting-card">
+        <img src="https://via.placeholder.com/300x200" alt="Smart Ceiling Light">
+        <h3>Smart Ceiling Light</h3>
+        <p>Modern, dimmable LED ceiling lights with app control and timer settings for any room.</p>
+        <button>Buy Now</button>
+      </div>
+            <div class="lighting-card">
+        <img src="https://via.placeholder.com/300x200" alt="Smart Ceiling Light">
+        <h3>Smart Ceiling Light</h3>
+        <p>Modern, dimmable LED ceiling lights with app control and timer settings for any room.</p>
+        <button>Buy Now</button>
+      </div>
+            <div class="lighting-card">
+        <img src="https://via.placeholder.com/300x200" alt="Smart Ceiling Light">
+        <h3>Smart Ceiling Light</h3>
+        <p>Modern, dimmable LED ceiling lights with app control and timer settings for any room.</p>
+        <button>Buy Now</button>
+      </div>
+            <div class="lighting-card">
+        <img src="https://via.placeholder.com/300x200" alt="Smart Ceiling Light">
+        <h3>Smart Ceiling Light</h3>
+        <p>Modern, dimmable LED ceiling lights with app control and timer settings for any room.</p>
+        <button>Buy Now</button>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
